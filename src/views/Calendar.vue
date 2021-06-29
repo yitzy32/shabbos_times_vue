@@ -3,7 +3,9 @@
     <h1>{{ message }}</h1>
     <input type="text" v-model="search">
     <button v-on:click="getWholeCalendar()">Search</button>
-    <vue-table-dynamic :params="params"></vue-table-dynamic>
+    <div style="width: 90%">
+      <vue-table-dynamic :params="params"></vue-table-dynamic>
+    </div>
   </div>
 </template>
 
@@ -25,6 +27,8 @@ export default {
         header: "row",
         border: true,
         stripe: true,
+        highlight: { column: [-3] },
+        highlightedColor: "rgb(255, 254, 209)",
       },
     };
   },
@@ -56,3 +60,4 @@ export default {
 };
 </script>
 
+// library available from this site: https://vuejsexamples.com/a-vue-component-of-dynamic-table/
